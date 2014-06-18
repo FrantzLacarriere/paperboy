@@ -9,6 +9,8 @@ gem "rake"
 gem "awesome_print"
 gem "pry"
 gem "pry-nav"
+gem 'thin'
+
 
 group :development do
   gem "shotgun"

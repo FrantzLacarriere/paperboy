@@ -1,0 +1,6 @@
+<%= "#{paperboy.name} just made the following deliveries!!" %><br>
+<% @deliveries.each do |delivery| %>
+  <%= delivery.house.address %>
+  at
+  <%= delivery.date %><br>
+<% end %>

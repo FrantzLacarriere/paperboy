@@ -1,0 +1,18 @@
+<% @paperboys.each do |paperboy| %>
+  <h1><%= paperboy.name %></h1><br>
+  <% paperboy.routes.each do |route| %>
+    <h2><%= route.id %></h1><br>
+    <form action=<%= "/paperboys/#{paperboy.id}/routes/#{route.id}/make_deliveries" %> method="POST">
+      <input type="submit" value="deliver to all houses on route via paperboys controller">
+    </form>
+    <form action=<%= "/routes/#{route.id}/make_deliveries" %> method="POST">
+      <input type="submit" value="deliver to all houses on route via routes controller">
+    </form>
+    <% route.houses.each do |house| %>
+      <%= house.address %>
+      <form action=<%= "/houses/#{house.id}/make_delivery" %> method="POST">
+        <input type="submit" value="deliver to this house">
+      </form><br>
+    <% end %>
+  <% end %>
+<% end %>

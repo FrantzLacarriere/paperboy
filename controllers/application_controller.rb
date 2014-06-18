@@ -3,8 +3,14 @@ class ApplicationController < Sinatra::Base
   set :views, Proc.new { File.join(root, "../views/") }
   enable  :sessions
 
-  def paperboy
-    # session[:paperboy_id]
-    Paperboy.first
+  get "/" do
+    redirect to("/paperboys")
+  end
+
+  helpers do
+    def paperboy
+      # session[:paperboy_id]
+      Paperboy.first
+    end
   end
 end

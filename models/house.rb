@@ -4,6 +4,6 @@ class House < ActiveRecord::Base
   has_one :route
 
   def deliver(paperboy)
-    house.deliveries.build(:date => Date.today, :paperboy_id => paperboy.id)
+    self.deliveries.create(:date => Date.today, :paperboy_id => paperboy.id)
   end
 end

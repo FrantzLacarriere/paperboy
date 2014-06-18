@@ -1,0 +1,5 @@
+<%= "#{@paperboy.name} "%>
+has made the following deliveries in his paperboy career<br>
+<% @paperboy.deliveries.each do |delivery| %>
+  <%= delivery.date %><%= delivery.house.address %><br>
+<% end %>
