@@ -1,0 +1,9 @@
+<form action=<%= "/houses/#{@house.id}/join_route" %> method="post">
+  <label for="1"></label>
+  <select name="route_id">
+    <% @routes.each do |route| %>
+      <option value=<%= route.id %>><%= route.id %></option> 
+    <% end %>
+  </select>
+  <input type="submit" value="join route">
+</form>
